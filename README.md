@@ -1,1 +1,1 @@
-# FlixterMoviesApp
+# FlixsterMoviesApp
