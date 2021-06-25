@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp">
 
     <ImageView
         android:id="@+id/ivPoster"
@@ -25,7 +27,9 @@
         android:layout_marginStart="7dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivPoster"
-        android:textSize="24sp"
+        android:maxLines="2"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
         tools:text="Luca" />
 
     <TextView
@@ -36,5 +40,9 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/ivPoster"
-        android:text="Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface." />
+        android:fontFamily="sans-serif"
+        android:maxLines="6"
+        android:text="Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface."
+        android:textColor="#DAD5D5"
+        android:textSize="14sp" />
 </RelativeLayout>

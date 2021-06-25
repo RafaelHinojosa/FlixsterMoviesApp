@@ -24,6 +24,8 @@ import org.parceler.Parcels;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
 
     Context context;
@@ -34,7 +36,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         this.movies = movies;
     }
 
-    // Inflate a layout returned inside a viewholder
+    // Inflate a layout returned inside a ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -79,20 +81,26 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             String imageUrl;
             String placeHolder;
 
+            int radius = 30;
+            int margin = 10;
+
             if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 Glide.with(context)
                         .load(movie.getBackdropPath())
                         .placeholder(R.drawable.flicks_backdrop_placeholder)
+                        .transform(new RoundedCornersTransformation(radius, margin))
                         .into(ivPoster);
             }
             else {
                 Glide.with(context)
                         .load(movie.getPosterPath())
                         .placeholder(R.drawable.flicks_movie_placeholder)
+                        .transform(new RoundedCornersTransformation(radius, margin))
                         .into(ivPoster);
             }
-
         }
+
+        // HACER ARRAY PARA MAPEAR COLORES CON NUMEROS DE VOTEAVERAGE
 
         @Override
         public void onClick(View v) {
